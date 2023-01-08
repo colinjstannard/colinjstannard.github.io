@@ -464,8 +464,9 @@ function pieChart(diameter, data) {
       }
        else{ firstSound  = true;
            }
-      playSound = false; 
-      fill(255, 215, 0);
+      playSound = false;
+       if(firstSound)
+        fill(255, 215, 0);
       arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
      }
     else{
