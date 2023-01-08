@@ -2,11 +2,9 @@ var fr = 120;
 var vel = 0;
 var inc = 0;
 var dec = .991;
-var tick;
 var lastTick = 18;
 var back = false;
 const rolls = ["Kaiju - 1", "Found Footage - 2", "Alien / UFO - 3 ", "Bigfoot - 4 ", "On Your Watchlist - 5 ", "Animated - 6 ", "Documentary - 7 ", "Criterion Collection - 8 ", "Foreign - 9 ", "Series Feature - 10 ", "Anime - 11 ", "Junk - 12 ", "Hunk / Babe Alert - 13 ", "Pre 60's - 14 ", "Shorts - 15 ", " Black Comedy - 16 ", "Actor Feature - 17", "Director Feature - 18", "RAINBOW - 19", "Rollers Choice - 20"];
-
 var angles = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 var games = [];
 var wedges = 20;
@@ -15,10 +13,32 @@ var moon;
 var canvas;
 var ff = false;
 var fb = true;
+var playSound = false;
+var tick, actorfeature, alienufo, animated, anime, bigfoot, blackcomedy, criterioncollection, directorfeature, documentary, foreign, foundfootage, hunkbabealert, junk, kaiju, onyourwatchlist, presixties, rainbow, rollerschoice, seriesfeature, shorts;
 
 function preload() { // Preloads Sounds
   soundFormats('ogg', 'mp3');
   tick = loadSound('assets/tick.mp3');
+  actorfeature = loadSound('assets/actorfeature.mp3');
+  alienufo = loadSound('assets/alienufo.mp3');
+  animated = loadSound('assets/animated.mp3');
+  anime = loadSound('assets/anime.mp3');
+  bigfoot = loadSound('assets/bigfoot.mp3');
+  blackcomedy = loadSound('assets/blackcomedy.mp3');
+  criterioncollection = loadSound('assets/criterioncollection.mp3');
+  directorfeature = loadSound('assets/directorfeature.mp3');
+  documentary = loadSound('assets/documentary.mp3');
+  foreign = loadSound('assets/foreign.mp3');
+  foundfootage = loadSound('assets/foundfootage.mp3');
+  hunkbabealert = loadSound('assets/hunkbabealert.mp3');
+  junk = loadSound('assets/junk.mp3');
+  kaiju = loadSound('assets/kaiju.mp3');
+  onyourwatchlist = loadSound('assets/onyourwatchlist.mp3');
+  presixties = loadSound('assets/presixties.mp3');
+  rainbow = loadSound('assets/rainbow.mp3');
+  rollerschoice = loadSound('assets/rollerschoice.mp3');
+  seriesfeature = loadSound('assets/seriesfeature.mp3');
+  shorts = loadSound('assets/shorts.mp3');
   moon = loadImage("reel.png");
 }
 
@@ -313,6 +333,7 @@ function mouseDragged(){
 
 function keyPressed(){
   var file = document.getElementById("input");
+  playSound = true;
   if(keyCode == 32 && file.style.display !== "block") // Space
     inc = random(5,25);
 }
@@ -376,6 +397,69 @@ function pieChart(diameter, data) {
       fill(244);
     }
      if(i == 20 - abs(selectedChart) && inc == 0){
+      switch(abs(selectedChart)){
+        case 1:
+          rollerschoice.play();
+        break;
+        case 2:
+          rainbow.play();
+        break;
+        case 3:
+          directorfeature.play();
+        break;
+        case 4:
+          actorfeature.play();
+        break;
+        case 5:
+          blackcomedy.play();
+        break;
+        case 6:
+          shorts.play();
+        break;
+        case 7:
+          presixties.play();
+        break;
+        case 8:
+          hunkbabealert.play();
+        break;
+        case 9:
+          junk.play();
+        break;
+        case 10:
+          anime.play();
+        break;
+        case 11:
+          seriesfeature.play();
+        break;
+        case 12:
+          foreign.play();
+        break;
+        case 13:
+          criterioncollection.play();
+        break;
+        case 14:
+          documentary.play();
+        break;
+        case 15:
+          animated.play();
+        break;
+        case 16:
+          onyourwatchlist.play();
+        break;
+        case 17:
+          bigfoot.play();
+        break;
+        case 18:
+          alienufo.play();
+        break;
+        case 19:
+          foundfootage.play();
+        break;
+        case 20:
+          kaiju.play();
+        break;
+      }
+      playSound = false; 
       fill(255, 215, 0);
       arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
      }
