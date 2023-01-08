@@ -360,8 +360,7 @@ function drawText(){
 }
 
 function pieChart(diameter, data) {
-  var selectedChart = lastTick % 18;
-  console.log(selectedChart);
+  var selectedChart = lastTick / 18;
   rotate(radians(vel));
   strokeWeight(3);
   stroke(244);
