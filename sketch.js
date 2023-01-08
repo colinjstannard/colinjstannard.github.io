@@ -396,7 +396,8 @@ function pieChart(diameter, data) {
     } else{
       fill(244);
     }
-     if(playSound && i == 20 - abs(selectedChart) && inc == 0){
+     if(i == 20 - abs(selectedChart) && inc == 0){
+      if(playSound){
       switch(abs(selectedChart)){
         case 1:
           rollerschoice.play();
@@ -458,6 +459,7 @@ function pieChart(diameter, data) {
         case 20:
           kaiju.play();
         break;
+      }
       }
       playSound = false; 
       fill(255, 215, 0);
