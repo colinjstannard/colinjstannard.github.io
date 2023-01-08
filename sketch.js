@@ -1,7 +1,7 @@
 var fr = 120;
 var vel = 0;
 var inc = 18;
-var dec = .999;
+var dec = .993;
 var tick;
 var lastTick = 18;
 var back = true;
