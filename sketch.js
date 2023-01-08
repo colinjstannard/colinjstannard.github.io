@@ -369,7 +369,7 @@ function pieChart(diameter, data) {
   for (var i = 0; i < data.length; i++) {
     if(i == selectedChart && vel == 0){
       fill(50);
-    } elseif(i % 2 == 0){
+    } else if(i % 2 == 0){
       fill(17);
     } else{
       fill(244);
