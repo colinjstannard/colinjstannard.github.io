@@ -59,7 +59,7 @@ function setup() {
 
 function draw(){
     canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
-    background(17); // Sets Background color to #111111
+    //background(17); // Sets Background color to #111111
     translate(width/2, height/2); // Sets orgin to center
     pieChart(800, angles); // Draws Roulette
     drawCenter(); //Draws Center Circle
