@@ -40,7 +40,6 @@ function draw(){
     drawPointer(); // Draws The Wheel Selector
     doPhysics(); // Calculates Physics
     doSound(); // Calculates Sound
-    randomSeed(random(0,1000000);
     //console.log(lastTick);
 }
 
