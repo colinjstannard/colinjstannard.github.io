@@ -1,7 +1,7 @@
 var fr = 120;
 var vel = 0;
 var inc = 0;
-var dec = .99;
+var dec = .999;
 var tick;
 var lastTick = 18;
 var back = true;
@@ -322,7 +322,7 @@ function doPhysics(){
       vel -=inc;
     } else
       vel +=inc;
-    inc *= dec + random(-.5,-.1);
+    inc *= dec + random(-.05,0);
     if(vel >= 360 || vel <= -360){
       vel = 0;
       lastTick = 0;
