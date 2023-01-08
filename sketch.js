@@ -313,7 +313,7 @@ function mouseDragged(){
 function keyPressed(){
   var file = document.getElementById("input");
   if(keyCode == 32 && file.style.display !== "block") // Space
-    inc = random(10,60);
+    inc = random(5,25);
 }
 
 function doPhysics(){
@@ -322,7 +322,7 @@ function doPhysics(){
       vel -=inc;
     } else
       vel +=inc;
-    inc *= dec;
+    inc *= dec + random(-.5,-.1);
     if(vel >= 360 || vel <= -360){
       vel = 0;
       lastTick = 0;
@@ -336,11 +336,8 @@ function drawCenter(){
 }
 
 function drawPointer(){
-  stroke(255);
-  strokeWeight(2);
   fill(160,40,40);
   triangle(420, 10, 380, 0, 420, -10);
-  strokeWeight(0);
 }
 
 function drawText(){
