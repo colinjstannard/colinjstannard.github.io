@@ -61,7 +61,7 @@ function draw(){
     canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
     //background(17); // Sets Background color to #111111
     translate(width/2, height/2); // Sets orgin to center
-    pieChart(800, angles); // Draws Roulette
+    pieChart(900, angles); // Draws Roulette
     drawCenter(); //Draws Center Circle
     getNames(); // Gets Names from HTML Forms
     drawText(); // Draws Names on Roulette
@@ -405,78 +405,76 @@ function pieChart(diameter, data) {
      if(i == 20 - abs(selectedChart) && inc == 0){
       if(playSound && firstSound){
         victory.play();
-      switch(abs(selectedChart)){
-        case 1:
-          rollerschoice.play();
-        break;
-        case 2:
-          rainbow.play();
-        break;
-        case 3:
-          directorfeature.play();
-        break;
-        case 4:
-          actorfeature.play();
-        break;
-        case 5:
-          blackcomedy.play();
-        break;
-        case 6:
-          shorts.play();
-        break;
-        case 7:
-          presixties.play();
-        break;
-        case 8:
-          hunkbabealert.play();
-        break;
-        case 9:
-          junk.play();
-        break;
-        case 10:
-          anime.play();
-        break;
-        case 11:
-          seriesfeature.play();
-        break;
-        case 12:
-          foreign.play();
-        break;
-        case 13:
-          criterioncollection.play();
-        break;
-        case 14:
-          documentary.play();
-        break;
-        case 15:
-          animated.play();
-        break;
-        case 16:
-          onyourwatchlist.play();
-        break;
-        case 17:
-          bigfoot.play();
-        break;
-        case 18:
-          alienufo.play();
-        break;
-        case 19:
-          foundfootage.play();
-        break;
-        case 20:
-          kaiju.play();
-        break;
-      }
+        switch(abs(selectedChart)){
+          case 1:
+            rollerschoice.play();
+          break;
+          case 2:
+            rainbow.play();
+          break;
+          case 3:
+            directorfeature.play();
+          break;
+          case 4:
+            actorfeature.play();
+          break;
+          case 5:
+            blackcomedy.play();
+          break;
+          case 6:
+            shorts.play();
+          break;
+          case 7:
+            presixties.play();
+          break;
+          case 8:
+            hunkbabealert.play();
+          break;
+          case 9:
+            junk.play();
+          break;
+          case 10:
+            anime.play();
+          break;
+          case 11:
+            seriesfeature.play();
+          break;
+          case 12:
+            foreign.play();
+          break;
+          case 13:
+            criterioncollection.play();
+          break;
+          case 14:
+            documentary.play();
+          break;
+          case 15:
+            animated.play();
+          break;
+          case 16:
+            onyourwatchlist.play();
+          break;
+          case 17:
+            bigfoot.play();
+          break;
+          case 18:
+            alienufo.play();
+          break;
+          case 19:
+            foundfootage.play();
+          break;
+          case 20:
+            kaiju.play();
+          break;
+        }
       }
       playSound = false;
       if(firstSound){
         fill(255, 215, 0);
       }
-      arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
-     }
-    else{
-    arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
+      //arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
     }
+    else{ arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18)); }
     lastAngle += radians(angles[i] * 18);
   }
   firstSound = true;
