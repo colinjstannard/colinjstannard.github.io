@@ -15,10 +15,13 @@ var canvas;
 var ff = false;
 var fb = true;
 var playSound = false;
-var tick, actorfeature, alienufo, animated, anime, bigfoot, blackcomedy, criterioncollection, directorfeature, documentary, foreign, foundfootage, hunkbabealert, junk, kaiju, onyourwatchlist, presixties, rainbow, rollerschoice, seriesfeature, shorts;
+var firstSound = true;
+var intro, victory, tick, actorfeature, alienufo, animated, anime, bigfoot, blackcomedy, criterioncollection, directorfeature, documentary, foreign, foundfootage, hunkbabealert, junk, kaiju, onyourwatchlist, presixties, rainbow, rollerschoice, seriesfeature, shorts;
 
 function preload() { // Preloads Sounds
   soundFormats('ogg', 'mp3');
+  intro = loadSound('assets/intro.mp3');
+  victory = loadSound('assets/victory.mp3');
   tick = loadSound('assets/tick.mp3');
   actorfeature = loadSound('assets/actorfeature.mp3');
   alienufo = loadSound('assets/alienufo.mp3');
@@ -61,6 +64,10 @@ function draw(){
     drawPointer(); // Draws The Wheel Selector
     doPhysics(); // Calculates Physics
     doSound(); // Calculates Sound
+    if(firstSound){
+      intro.play();
+      firstSound = false;
+    }
     //console.log(lastTick);
 }
 
@@ -399,6 +406,7 @@ function pieChart(diameter, data) {
     }
      if(i == 20 - abs(selectedChart) && inc == 0){
       if(playSound && firstSound){
+        victory.play();
       switch(abs(selectedChart)){
         case 1:
           rollerschoice.play();
@@ -463,8 +471,9 @@ function pieChart(diameter, data) {
       }
       }
       playSound = false;
-       if(firstSound)
+      if(firstSound){
         fill(255, 215, 0);
+      }
       arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
      }
     else{
