@@ -64,7 +64,7 @@ function draw(){
     drawPointer(); // Draws The Wheel Selector
     doPhysics(); // Calculates Physics
     doSound(); // Calculates Sound
-    if(firstSound){
+    if(firstSound == true){
       intro.play();
       firstSound = false;
     }
