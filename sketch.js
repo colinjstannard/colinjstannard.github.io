@@ -1,10 +1,10 @@
-var fr = 120;
+var fr = 60;
 var vel = 0;
-var inc = 18;
+var inc = 0;
 var dec = .993;
 var tick;
 var lastTick = 18;
-var back = true;
+var back = false;
 const rolls = ["Kaiju - 1", "Found Footage - 2", "Alien / UFO - 3 ", "Bigfoot - 4 ", "On Your Watchlist - 5 ", "Animated - 6 ", "Documentary - 7 ", "Criterion Collection - 8 ", "Foreign - 9 ", "Series Feature - 10 ", "Anime - 11 ", "Junk - 12 ", "Hunk / Babe Alert - 13 ", "Pre 60's - 14 ", "Shorts - 15 ", " Black Comedy - 16 ", "Actor Feature - 17", "Director Feature - 18", "RAINBOW - 19", "Rollers Choice - 20"];
 
 var angles = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
