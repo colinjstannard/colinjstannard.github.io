@@ -313,7 +313,7 @@ function mouseDragged(){
 function keyPressed(){
   var file = document.getElementById("input");
   if(keyCode == 32 && file.style.display !== "block") // Space
-    inc += 4 + random(19);
+    inc = random(10,60);
 }
 
 function doPhysics(){
