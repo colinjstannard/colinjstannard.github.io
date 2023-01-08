@@ -342,6 +342,7 @@ function drawPointer(){
 }
 
 function drawText(){
+  var selectedChart = lastTick / 18;
   rotate(radians(vel));
   noStroke();
   textAlign(RIGHT, CENTER);
@@ -352,6 +353,9 @@ function drawText(){
     } else {
       fill(17);
     }
+     if(i == 20 - abs(selectedChart) && inc == 0){
+       fill(17);
+     }
     rotate(radians(18/2)); //rotates to center of wedge
     text(games[i], 375, 0);
     rotate(radians(18/2)); //rotates to end of edge
