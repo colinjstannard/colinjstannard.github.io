@@ -51,6 +51,10 @@ function setup() {
   canvas.parent('canvas');
   frameRate(fr);
   smooth();
+      if(firstSound == true){
+      intro.play();
+      firstSound = false;
+    }
   }
 
 function draw(){
@@ -64,10 +68,7 @@ function draw(){
     drawPointer(); // Draws The Wheel Selector
     doPhysics(); // Calculates Physics
     doSound(); // Calculates Sound
-    if(firstSound == true){
-      intro.play();
-      firstSound = false;
-    }
+
     //console.log(lastTick);
 }
 
