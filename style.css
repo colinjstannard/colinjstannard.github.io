@@ -1,6 +1,6 @@
 
 body {
-  background-color: #111111;
+  background-image: url("/assets/spin.png") ;
   position:relative;
   overflow: hidden;
   overflow-x: hidden;
