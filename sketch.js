@@ -336,8 +336,11 @@ function drawCenter(){
 }
 
 function drawPointer(){
-  fill(130,40,40);
+  stroke(255);
+  strokeWeight(2);
+  fill(160,40,40);
   triangle(420, 10, 380, 0, 420, -10);
+  strokeWeight(0);
 }
 
 function drawText(){
