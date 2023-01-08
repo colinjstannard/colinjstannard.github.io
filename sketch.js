@@ -366,14 +366,18 @@ function pieChart(diameter, data) {
   stroke(244);
   var lastAngle = 0;
   for (var i = 0; i < data.length; i++) {
-    if(i == 20 - selectedChart && inc == 0){
-      fill(50);
-    } else if(i % 2 == 0){
+    if(i % 2 == 0){
       fill(17);
     } else{
       fill(244);
     }
+     if(i == 20 - abs(selectedChart) && inc == 0){
+      fill(255, 215, 0);
+      arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
+     }
+    else{
     arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
+    }
     lastAngle += radians(angles[i] * 18);
     //console.log(lastAngle);
   }
