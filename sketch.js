@@ -376,7 +376,7 @@ function pieChart(diameter, data) {
     }
     arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
     lastAngle += radians(angles[i] * 18);
-    console.log(lastAngle);
+    //console.log(lastAngle);
   }
   rotate(0 - radians(vel));
 }
