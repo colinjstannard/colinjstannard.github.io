@@ -1,4 +1,4 @@
-var fr = 60;
+var fr = 120;
 var vel = 0;
 var inc = 0;
 var dec = .991;
