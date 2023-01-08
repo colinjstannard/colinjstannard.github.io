@@ -48,7 +48,7 @@ function preload() { // Preloads Sounds
 
 function setup() {
   canvas = createCanvas(900, 900);
-  canvas.parent('canvas');
+  //canvas.parent('canvas');
   frameRate(fr);
   smooth();
       if(firstSound == true){
