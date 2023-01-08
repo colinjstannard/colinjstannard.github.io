@@ -367,7 +367,7 @@ function pieChart(diameter, data) {
   stroke(244);
   var lastAngle = 0;
   for (var i = 0; i < data.length; i++) {
-    if(i == selectedChart && vel == 0){
+    if(i == selectedChart && inc == 0){
       fill(50);
     } else if(i % 2 == 0){
       fill(17);
