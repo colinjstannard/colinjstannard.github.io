@@ -396,7 +396,7 @@ function pieChart(diameter, data) {
     } else{
       fill(244);
     }
-     if(i == 20 - abs(selectedChart) && inc == 0){
+     if(playSound && i == 20 - abs(selectedChart) && inc == 0){
       switch(abs(selectedChart)){
         case 1:
           rollerschoice.play();
