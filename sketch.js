@@ -4,6 +4,7 @@ var inc = 0;
 var dec = .991;
 var lastTick = 18;
 var back = false;
+var firstSound = false;
 const rolls = ["Kaiju - 1", "Found Footage - 2", "Alien / UFO - 3 ", "Bigfoot - 4 ", "On Your Watchlist - 5 ", "Animated - 6 ", "Documentary - 7 ", "Criterion Collection - 8 ", "Foreign - 9 ", "Series Feature - 10 ", "Anime - 11 ", "Junk - 12 ", "Hunk / Babe Alert - 13 ", "Pre 60's - 14 ", "Shorts - 15 ", " Black Comedy - 16 ", "Actor Feature - 17", "Director Feature - 18", "RAINBOW - 19", "Rollers Choice - 20"];
 var angles = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 var games = [];
@@ -397,7 +398,7 @@ function pieChart(diameter, data) {
       fill(244);
     }
      if(i == 20 - abs(selectedChart) && inc == 0){
-      if(playSound){
+      if(playSound && firstSound){
       switch(abs(selectedChart)){
         case 1:
           rollerschoice.play();
@@ -461,6 +462,8 @@ function pieChart(diameter, data) {
         break;
       }
       }
+       else{ firstSound  = true;
+           }
       playSound = false; 
       fill(255, 215, 0);
       arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
