@@ -324,9 +324,7 @@ function doSound(){
 }
 
 function mouseDragged(){
-
-  var file = document.getElementById("input");
-  if (file.style.display !== "block") {
+  if (true) {
     var newVelocity = (atan2(mouseY-height/2,mouseX-width/2) - atan2(pmouseY-height/2,pmouseX-width/2));
     if(newVelocity < 0){
       newVelocity = 0 - (atan2(mouseY-height/2,mouseX-width/2) - atan2(pmouseY-height/2,pmouseX-width/2));
@@ -341,9 +339,8 @@ function mouseDragged(){
 }
 
 function keyPressed(){
-  var file = document.getElementById("input");
   playSound = true;
-  if(keyCode == 32 && file.style.display !== "block") // Space
+  if(keyCode == 32) // Space
     inc = random(5,25);
 }
 
