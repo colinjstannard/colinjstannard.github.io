@@ -62,7 +62,7 @@ function draw(){
     canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
     //background(17); // Sets Background color to #111111
     translate(width/2, height/2); // Sets orgin to center
-    pieChart(900, angles); // Draws Roulette
+    pieChart(800, angles); // Draws Roulette
     drawCenter(); //Draws Center Circle
     getNames(); // Gets Names from HTML Forms
     drawText(); // Draws Names on Roulette
@@ -473,7 +473,7 @@ function pieChart(diameter, data) {
       if(firstSound){
         fill(255, 215, 0);
       }
-      //arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
+      arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
     }
     else{ arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18)); }
     lastAngle += radians(angles[i] * 18);
