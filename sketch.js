@@ -360,12 +360,16 @@ function drawText(){
 }
 
 function pieChart(diameter, data) {
+  var selectedChart = lastTick % 18;
+  console.log(selectedChart);
   rotate(radians(vel));
   strokeWeight(3);
   stroke(244);
   var lastAngle = 0;
   for (var i = 0; i < data.length; i++) {
-    if(i % 2 == 0){
+    if(i == selectedChart && vel == 0){
+      fill(50);
+    } elseif(i % 2 == 0){
       fill(17);
     } else{
       fill(244);
