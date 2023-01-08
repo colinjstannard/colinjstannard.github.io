@@ -40,6 +40,7 @@ function draw(){
     drawPointer(); // Draws The Wheel Selector
     doPhysics(); // Calculates Physics
     doSound(); // Calculates Sound
+    console.log(lastTick);
 }
 
 function getNames(){
