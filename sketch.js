@@ -322,7 +322,7 @@ function doPhysics(){
       vel -=inc;
     } else
       vel +=inc;
-    inc *= dec + random(-.05,0);
+    inc *= dec + random(-.001,0);
     if(vel >= 360 || vel <= -360){
       vel = 0;
       lastTick = 0;
