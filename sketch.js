@@ -473,7 +473,7 @@ function pieChart(diameter, data) {
       if(firstSound){
         fill(255, 215, 0);
       }
-      arc(0, 0, diameter + 10, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
+      arc(0, 0, diameter + 10, diameter + 10, lastAngle, lastAngle+radians(angles[i] * 18));
     }
     else{ arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18)); }
     lastAngle += radians(angles[i] * 18);
