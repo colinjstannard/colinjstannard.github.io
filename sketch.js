@@ -16,6 +16,8 @@ var ff = false;
 var fb = true;
 var playSound = false;
 var firstSound = true;
+var ticking = false;
+var tickCount = 0;
 var intro, victory, tick, actorfeature, alienufo, animated, anime, bigfoot, blackcomedy, criterioncollection, directorfeature, documentary, foreign, foundfootage, hunkbabealert, junk, kaiju, onyourwatchlist, presixties, rainbow, rollerschoice, seriesfeature, shorts;
 
 function preload() { // Preloads Sounds
@@ -302,20 +304,25 @@ function doSound(){
     if(lastTick <= vel && !back && ff == false){
       tick.play();
       lastTick +=18;
+      ticking = true;
+      
     }
     else if(lastTick <= vel && !back && ff == true){
       fb = true;
       ff = false;
       lastTick +=18;
+            ticking = true;
     }
     else if(lastTick >= vel && back && fb == false){
       lastTick -=18
       tick.play();
+            ticking = true;
     }
     else if(lastTick >= vel && back && fb == true){
       fb = false;
       ff = true;
       lastTick -=18;
+            ticking = true;
     }
   }
 }
@@ -364,7 +371,17 @@ function drawCenter(){
 
 function drawPointer(){
   fill(160,40,40);
-  triangle(420, 10, 380, 0, 420, -10);
+  if(ticking)
+    triangle(420, 5, 380, 5, 420, -15);
+  else
+    triangle(420, 10, 380, 0, 420, -10);
+  if(tickCount == 15){
+    ticking = false;
+    tickCount = 0;
+  }else{
+    tickCount++;
+
+  }
 }
 
 function drawText(){
@@ -471,7 +488,7 @@ function pieChart(diameter, data) {
       if(firstSound){
         fill(255, 215, 0);
       }
-      arc(0, 0, diameter + 10, diameter + 10, lastAngle, lastAngle+radians(angles[i] * 18));
+      arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18));
     }
     else{ arc(0, 0, diameter, diameter, lastAngle, lastAngle+radians(angles[i] * 18)); }
     lastAngle += radians(angles[i] * 18);
