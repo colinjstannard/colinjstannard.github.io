@@ -1,6 +1,6 @@
 
 body {
-  background-image: url("/assets/back.png")  no-repeat center center fixed;
+  background-image: url("/assets/back.png");
   position:relative;
   overflow: hidden;
   overflow-x: hidden;
