@@ -51,8 +51,9 @@ function setup() {
   //canvas.parent('canvas');
   frameRate(fr);
   smooth();
+  intro.play();
       if(firstSound == true){
-      intro.play();
+      
       firstSound = false;
     }
   }
@@ -340,9 +341,11 @@ function mouseDragged(){
 }
 
 function keyPressed(){
-  playSound = true;
-  if(keyCode == 32) // Space
+  
+  if(keyCode == 32){ // Space
     inc = random(5,25);
+    playSound = true;
+  }
 }
 
 function doPhysics(){
