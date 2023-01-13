@@ -297,10 +297,10 @@ function calculateGames(num, count){
 }
 
 function doSound(){
-    if(firstSound == true){
-      intro.play();
-      firstSound = false;
-    }
+  if(firstSound){
+    intro.play();
+    firstSound = false;
+  }
   if(inc!= 0){
 
     if(lastTick <= vel && !back && ff == false){
