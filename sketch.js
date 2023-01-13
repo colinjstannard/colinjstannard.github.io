@@ -52,20 +52,20 @@ function setup() {
   frameRate(fr);
   smooth();
   intro.play();
-
   }
 
 function draw(){
-    canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
-    //background(17); // Sets Background color to #111111
-    translate(width/2, height/2); // Sets orgin to center
-    pieChart(800, angles); // Draws Roulette
-    drawCenter(); //Draws Center Circle
-    getNames(); // Gets Names from HTML Forms
-    drawText(); // Draws Names on Roulette
-    drawPointer(); // Draws The Wheel Selector
-    doPhysics(); // Calculates Physics
-    doSound(); // Calculates Sound
+  clear;
+  canvas.position((windowWidth - width) / 2, (windowHeight - height) / 2);
+  //background(17); // Sets Background color to #111111
+  translate(width/2, height/2); // Sets orgin to center
+  pieChart(800, angles); // Draws Roulette
+  drawCenter(); //Draws Center Circle
+  getNames(); // Gets Names from HTML Forms
+  drawText(); // Draws Names on Roulette
+  drawPointer(); // Draws The Wheel Selector
+  doPhysics(); // Calculates Physics
+  doSound(); // Calculates Sound
 
     //console.log(lastTick);
 }
@@ -297,10 +297,6 @@ function calculateGames(num, count){
 }
 
 function doSound(){
-  if(firstSound){
-    intro.play();
-    firstSound = false;
-  }
   if(inc!= 0){
 
     if(lastTick <= vel && !back && ff == false){
