@@ -1,6 +1,10 @@
 
 body {
-  background-image: url("/assets/spin.png") ;
+  background-image: url("/assets/back.png")  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position:relative;
   overflow: hidden;
   overflow-x: hidden;
